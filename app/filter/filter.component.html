@@ -1,0 +1,33 @@
+<div>
+  <button class='show-filter' (click)='show_filterbox()'>FILTER</button>
+  <div [@masuklist] *ngIf='show' class='filterbox pop-up'>
+    <button style='float:right' (click)='close_filterbox()'>tutup</button>
+    <span *ngIf='user.admin==1'>Pilih BPD</span>
+    <br/><select *ngIf='user.admin==1' [(ngModel)]='comp.filtered_bpd' (change)='filter()'>
+      <option value='0'>Semua</option>
+      <option *ngFor='let bpd of listbpd' value='{{bpd.id}}'>
+        {{bpd.nama}}({{bpd.id}})
+      </option>
+    </select>
+    <br/><span *ngIf='user.admin==1'>Pilih Program</span>
+    <br/><select *ngIf='user.admin==1' [(ngModel)]='comp.filtered_program' (change)='filter()'>
+      <option value='0'>Semua</option>
+      <option *ngFor='let p of listprogram' value='{{p.id}}'>
+        {{p.namaprogram}} ({{p.namadivisi}})
+      </option>
+    </select>
+    <br/><span>Pilih Divisi</span>
+    <br/><select [(ngModel)]='comp.filtered_divisi' (change)='filter()'>
+      <option value='0'>Semua</option>
+      <option *ngFor='let d of listdivisi' value='{{d.id}}'>
+        {{d.namadivisi}}
+      </option>
+    </select>
+    <br/><span>Pilih Pelaksanaan</span>
+    <br/><select [(ngModel)]='comp.filtered_pelaksanaan' (change)='filter()'>
+      <option value='0'>Semua</option>
+      <option value='1'>Sudah terlaksana</option>
+      <option value='-1'>Belum terlaksana</option>
+    </select>
+  </div>
+</div>

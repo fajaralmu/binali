@@ -1,0 +1,89 @@
+
+td, th {
+    width: 100px;
+    vertical-align: top;
+}
+
+.container {
+    margin: auto;
+    width: 90%;
+    height: auto;
+}
+
+.kalender{
+    width:100%;
+    border-spacing: 3px;
+    font-family: 'Calibri';
+}
+
+.kalender th{
+    background-color:tan;
+    font-size: large;
+}
+
+._tanggal_ {
+    background-color:burlywood;
+    font-size: large;
+    height: 100px;
+    transition-duration: 0.4s;
+    text-align: left;
+}
+
+._tanggal_:hover{
+    cursor: pointer;
+    color: azure;
+    background-color: coral;
+}
+
+.nav-tanggal{
+    font-size: x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: wheat;
+    background-color: tomato;
+    height:50px;
+    margin:4px;
+}
+
+#wadah-proker{
+    min-height: 710px;
+    width:30%;
+}
+
+#info-proker{
+    background-color: wheat;
+    min-height: 655px;
+}
+
+#kalender{
+    float: right;
+    width:70%;
+}
+
+.judul-info-proker{
+    background-color: tomato;
+    color:wheat;
+    padding: 10px;
+    height:30px;
+    margin-bottom:7px;
+}
+
+.tabel-navigasi{
+    width:100%;
+    table-layout: fixed;
+    text-align: center
+}
+
+.libur{
+    background-color: tomato;
+    opacity: 0.7;
+}
+
+.wrap-detail-harian{
+    position: fixed;
+    top:10%;
+    left:30%;
+    padding:5px;
+    background-color: tan;
+    border:solid 2px brown;
+    width: 40%;
+}

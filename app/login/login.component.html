@@ -1,0 +1,17 @@
+<h2>
+  Login Page
+</h2>
+<div *ngIf='!login' class='form'[@masuklist]>
+  <img style="margin-right:20px; float:right" height="150px" src="/assets/images/login.png" />
+  <p>Username</p>
+  <input type="text" [(ngModel)]='user.username' />
+  <p>Katasandi</p>
+  <input type="password" [(ngModel)]='user.katasandi' />
+  <p></p>
+  <button (click)='masuk()'>Masuk</button>
+  <p></p>
+  <a (click)='lupa()'>Lupa password</a>
+  |
+  <a routerLink='/daftar'>Daftar</a>
+  <p></p>
+</div>

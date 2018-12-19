@@ -1,0 +1,38 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class='parent'>
+  <div class='header'>
+    <img style="margin-left:10px; float:left" height="70px" src="/assets/images/header.png" />
+    <table class='wadah_nav'>
+      <tr>
+        <td style="width: auto">
+          <ul>
+            <li class='nav' [ngClass]='{visiting:menu==1}' routerLink='home'>Home</li>
+            <li class='nav' *ngIf='!login' [ngClass]='{visiting:menu==2}' routerLink='masuk'>Masuk</li>
+            <li class='nav' *ngIf='login' [ngClass]='{visiting:menu==3}' routerLink='dasbor'>Dasbor</li>
+            <li class='nav' *ngIf='login' [ngClass]='{visiting:menu==4}' routerLink='program'>Progam</li>
+            <li class='nav' *ngIf='login' [ngClass]='{visiting:menu==5}' routerLink='divisi'>Divisi</li>
+            <li class='nav' [ngClass]='{visiting:menu==6}' routerLink='galeri'>Galeri</li>
+          </ul>
+        </td>
+        <td>
+          <div class='nav nav_user' *ngIf='login'>
+            <img width="20px" src="/assets/images/user.png" />
+            {{user.nama}}
+            <div class='dropdown-content'>
+              <div class='navdropdown'><a class="link" routerLink='profil'>profil</a></div>
+              <div class='navdropdown'><a class="link" routerLink='#'>request</a></div>
+              <div class='navdropdown'><a class="link" routerLink='keluar'>keluar</a></div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class='konten'>
+    <router-outlet></router-outlet>
+  </div>
+  <div class='footer'>
+
+    <p style='text-align:center'>&copy; 2018 Mahasiswa Pencinta Islam</p>
+  </div>
+</div>

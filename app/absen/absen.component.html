@@ -1,0 +1,74 @@
+<div *ngIf='valid'>
+  <h2>
+    Monitoring Kegiatan
+  </h2>
+  <p>
+    &nbsp;&nbsp;<button (click)='togglegaleri()'>Galeri Anda</button>
+  </p>
+  <div style='position: relative'>
+    <div class='listgaleri' *ngIf='tampilgaleri'>
+      <button (click)='togglegaleri()' style='float: right;'>tutup</button>
+      <h3>List Galeri {{user.nama}}</h3>
+      <div *ngIf='listgaleri'>
+        <div class='itemgaleri' [@masuklist] *ngFor='let img of listgaleri'>
+          <img width=70px; src='{{url_image}}{{img.nama}}' />
+          kegiatan: {{img.idkegiatan}}
+          <button style='float: right;' *ngIf='user.admin == 0' (click)='hapusgambar(img.id, true)'>Hapus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div [@masuklist] class='form form-proker'>
+    <button *ngIf='user.admin==0' (click)='switch()'>input data baru</button>
+    <button *ngIf='user.admin==0 && kegiatan.iduser==user.id' (click)='hapus(kegiatan)'>hapus</button>
+    <p>Nama Program</p>
+    <select [(ngModel)]='kegiatan.idprogram'>
+      <option *ngFor='let p of listprogram' value={{p.id}}>{{p.namaprogram}} ({{p.namadivisi}})</option>
+    </select>
+    <p>Tanggal</p>
+    <input type='date' [(ngModel)]='kegiatan.tanggal'>
+    <p>Peserta</p>
+    <input type='number' [(ngModel)]='kegiatan.peserta'>
+    <p>Lokasi</p>
+    <input type='text' [(ngModel)]='kegiatan.lokasi'>
+    <p>Keterangan</p>
+    <textarea [(ngModel)]='kegiatan.keterangan'></textarea>
+    <p>Terlaksana</p>
+    <select [(ngModel)]='kegiatan.terlaksana'>
+      <option value='-1' selected>Belum</option>
+      <option value='1'>Sudah</option>
+    </select>
+    <p>Galeri:</p>
+    <div [ngClass]="{galeri:kegiatan.galeri.length>0}">
+      <div *ngIf='kegiatan.galeri'>
+        <div class='itemgaleri' [@masuklist] *ngFor='let img of kegiatan.galeri'>
+          <img width=70px; src='{{url_image}}{{img.nama}}' />
+          <button style='float: right;' *ngIf='user.admin == 0' (click)='hapusgambar(img.id, false)'>Hapus</button>
+        </div>
+      </div>
+    </div>
+    <p></p>
+    <div *ngIf='user.admin == 0' class="inputgambar" style='border:solid 1px green; width:80% '>
+      <input style='margin:10px;' type="file" id="gambar" />
+      <p></p>
+      <button style='margin:10px;' (click)='upload()'>Upload</button>
+    </div>
+    <p></p>
+    <span *ngIf='user.admin == 0'>
+      <button (click)='tambah()'>Tambah</button> or <button (click)='edit()'>Simpan</button>
+    </span>
+    <p></p>
+  </div>
+  <div style='min-height: 500px;'>
+    <app-filter [user]='user' [comp]='comp' [listbpd]='listbpd' [listprogram]='listprogram' [listdivisi]='listdivisi'></app-filter>
+    <p *ngIf='filtered_listkegiatan.length==0'>Belum ada kegiatan. Silakan input kegiatan baru</p>
+    <div style='width:40%'>
+      <app-listentitas
+      [comp]='comp'
+      [listentitas]='filtered_listkegiatan'
+      [listkegiatan_tampil]='1'
+      ></app-listentitas>
+    </div>
+    
+  </div>
+</div>

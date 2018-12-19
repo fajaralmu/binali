@@ -1,0 +1,37 @@
+h2{
+    
+}
+
+.galeri{
+    width:80%;
+    margin:auto;
+}
+
+.itemphoto{
+    float: left;
+    height:120px;
+    color:wheat;
+    border:solid 3px blueviolet;
+    border-radius: 10px;
+    background-color: blueviolet;
+    padding: 5px;
+    margin:5px;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+
+.itemphoto:hover{
+    cursor: pointer;
+    background-color: cornflowerblue;
+}
+
+.rincian{
+    width:30%;
+    min-height:400px;
+    margin:20px;
+}
+
+.tampilgambar{
+    float:right;
+    margin-right:20px;
+}

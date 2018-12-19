@@ -1,0 +1,22 @@
+
+input, select, textarea{
+    width:80%;
+}
+
+.galeri{
+    width:75%;
+}
+
+.itemgaleri{
+    background-color: honeydew;
+    padding:5px;
+    margin:5px;
+}
+
+.listgaleri{
+    position: absolute;
+    width: 50%;
+    padding:5px;
+    background-color:silver;
+}
+

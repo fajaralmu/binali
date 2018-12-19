@@ -1,0 +1,27 @@
+<div class='container' *ngIf='valid' style='width:80%;margin: auto'>
+    <h2>
+      List Divisi-MPI
+    </h2>
+    <div class='form form-proker' [@masuklist]>
+      <button *ngIf='admin' (click)='switchtambah()'>progam baru</button>
+      <p></p>
+      <p>Nama Divisi</p>
+      <input type='text' [(ngModel)]='divisi.namadivisi' />
+      <p>Deskripsi</p>
+      <textarea [(ngModel)]='divisi.deskripsi'></textarea>
+      <p></p>
+      <button *ngIf='baru && admin' (click)='tambah()'>tambah</button>
+      <button *ngIf='!baru && admin' (click)='edit()'>simpan</button>
+      <p></p>
+  
+    </div>
+    <div style='min-height: 500px;'>
+      <div style='width:40%'>
+        <app-listentitas
+        [comp]='comp'
+        [listentitas]='listdivisi'
+        [listdivisi_tampil]='1'
+        ></app-listentitas>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,186 @@
+/* Application-wide Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  margin:auto;
+  text-align: center;
+}
+
+.open-close-container {
+  border: 1px solid #dddddd;
+  margin-top: 1em;
+  padding: 20px 20px 0px 20px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
+}
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.form{
+  width:50%;
+  background-color:palegreen;
+  padding: 10px;
+  margin:auto;
+  text-align: left;
+} 
+
+.form-proker{ /* komponen dasbor dan program */
+  width:40%;
+  float: right;
+}
+
+.list-program{
+  background-color:khaki;
+  width:90%;
+  text-align: left;
+  transition-duration: 0.5s;
+  padding: 5px;
+  margin: 10px;
+
+}
+
+.list-program:hover{
+  cursor: pointer;
+  background-color:gold;
+}
+
+.judul-program{
+  color:white;
+  background-color: green;
+  padding:7px;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.selected{
+  background-color: tomato;
+}
+
+.visiting{
+  background-color: #888;
+}
+
+.btn{
+  border: none;
+  background-color: none;
+  transition-duration: 0.5s;
+}
+
+.btn:hover{
+  cursor: pointer;
+  color:white;
+}
+
+.btn-hapus{
+  color:white;
+}
+
+.btn-hapus:hover{
+  color:red;
+}
+
+li:hover{
+  cursor: pointer;
+}
+
+li {
+  transition-duration: 0.5s;
+  list-style: none;
+}
+
+.wadah_nav{
+  /* background-color: aliceblue; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 50%;
+  margin-left: 45%;
+ }
+
+.nav{
+  display: inline;
+  padding:10px;
+  border:solid 1px gray;
+  /* background-color: #444; */
+  transition-duration: 0.5s;
+  color:white;
+}
+
+.nav_home{
+  background-color: gray;
+}
+
+.nav_user{
+  right:0;
+  position: relative;
+  border:  solid 1px gray;
+}
+
+.nav:hover{
+  cursor: pointer;
+  background-color: #888;
+  color:yellow;
+}
+
+.dropdown-content{
+  width: 100%;
+  display: none;
+  transition-duration: 0.5s;
+  position: absolute;
+}
+
+
+.navdropdown{
+  width: 100%;
+  list-style: none;
+  background-color: slategray;
+  color:white;
+  padding:5px;
+  transition-duration: 0.5s;
+}
+
+.link{
+  text-decoration: none;
+  color:white;
+}
+
+.navdropdown:hover{
+  background-color: #dddddd;
+}
+
+.nav_user:hover .dropdown-content{
+  display: block;
+}
+
+.header{
+  width:100%;
+  height:auto;
+  padding: 10px;
+  background-color: #444;
+  text-align: left;
+  border-bottom: solid 10px green;
+}
+
+.footer{
+  width:100vw;
+  padding: 10px;
+  color:white;
+  background-color: #444;
+  height:7vw;
+  border-top: solid 10px green;
+  
+}
+
+.konten{
+  width:100vw;
+  padding: 10px;
+  min-height: 300px;
+  background-color: white
+}

@@ -1,0 +1,50 @@
+<div>
+  <div [@masuklist] class='filtertampil'>
+    <p style='text-align: center'>Total record: {{listentitas_ori.length}} | Jumlah tampil:
+      <select [(ngModel)]='jumlahtampil' (change)='updatejumlahtampil()'>
+        <option value=5>5</option>
+        <option value=10>10</option>
+        <option value=15>15</option>
+        <option value='{{listentitas_ori.length}}'>Semua</option>
+      </select></p>
+    <div class='wrap-navigasi'>
+      <button style='float:left' class='navigasi' (click)="nav('prev')">
+        Previous</button> <button class='navigasi' *ngFor='let b of listtombol;index as i' [ngClass]='{visit:i==halaman_skrg}'
+        (click)='tampil(i,b.mulai, b.sampai)'>{{i+1}}
+      </button>
+      <button style='float:right' class='navigasi' (click)="nav('next')">Next</button>
+    </div>
+  </div>
+
+  <div *ngIf="listkegiatan_tampil == 1">
+    <div [@masuklist] class='list-program' *ngFor='let k of listentitas;index as i' (click)='tampilrinci(k.id)'
+      [ngClass]="{selected:k.id == comp.id_terpilih}">
+      <p>{{i+1+(jumlahtampil*halaman_skrg)}}. <span class='judul-program'>{{k.nama}} ({{k.id}})</span>
+        <span class='realisasi-ok' *ngIf='k.terlaksana == 1'>&#9745;</span>
+        <span class='realisasi-not' *ngIf='k.terlaksana != 1'>&#9744;</span>
+        <span style='float:right' class='judul-divisi'>{{k.namadivisi}}</span>
+      </p>
+      {{k.tanggal}}
+      <span *ngIf='comp.admin'>id BPD: {{k.iduser}}</span>
+    </div>
+  </div>
+  <div *ngIf="listprogram_tampil == 1">
+    <div [@masuklist] class='list-program' *ngFor='let program of listentitas; index as i' (click)='comp.tampil(program.id)'
+      [ngClass]="{selected:program.id == id_terpilih}">
+      <a *ngIf='comp.admin' class="btn btn-hapus" style="float:right" (click)='comp.hapus(program.id)'>&#10006;</a>
+      <span style='float:right' class='judul-divisi'>{{program.namadivisi}}</span>
+      <p>{{i+1+(jumlahtampil*halaman_skrg)}}. <span class='judul-program'>{{program.namaprogram}}</span></p>
+      <p>Jumlah kegiatan: {{program.jmlkegiatan}}</p>
+      <p>deskripsi: {{program.deskripsi}}</p>
+      </div>
+  </div>
+  <div *ngIf="listdivisi_tampil == 1">
+    <div [@masuklist] class='list-program' *ngFor='let divisi of listentitas; index as i' (click)='comp.tampil(divisi.id)'
+      [ngClass]="{selected:divisi.id == comp.id_terpilih}">
+      <a *ngIf='comp.admin' class="btn btn-hapus" style="float:right" (click)='comp.hapus(divisi.id)'>&#10006;</a>
+      <p>{{i+1+(jumlahtampil*halaman_skrg)}}. <span class='judul-program'>{{divisi.namadivisi}}</span></p>
+      <p>deskripsi: {{divisi.deskripsi}}</p>
+
+    </div>
+  </div>
+</div>

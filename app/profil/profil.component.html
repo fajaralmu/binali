@@ -1,0 +1,16 @@
+<h2>
+  Edit Profil
+</h2>
+<div *ngIf='valid' class='form' [@masuklist]>
+  <p>Username</p>
+  <input type="text" [(ngModel)]='user.username' />
+  <p>Email</p>
+  <input type="email" [(ngModel)]='user.email' />
+  <p>Nama</p>
+  <input [(ngModel)]='user.nama' type='text' />
+  <p>Katasandi</p>
+  <input type="password" [(ngModel)]='user.katasandi' />
+  <p></p>
+  <button (click)='edit(user)'>Simpan</button>
+  <p></p>
+</div>

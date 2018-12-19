@@ -1,0 +1,18 @@
+<p>
+  Registrasi BPD
+</p>
+<div class='form'>
+  <p>Username</p>
+  <input type="text" [(ngModel)]='user.username' />
+  <p>Email</p>
+  <input type="email" [(ngModel)]='user.email' />
+  <p>Nama</p>
+  <input [(ngModel)]='user.nama' type='text'/>
+  <p>Katasandi</p>
+  <input type="password" [(ngModel)]='user.katasandi' />
+  <p>Ulangi Katasandi</p>
+  <input type="password" [(ngModel)]='katasandi_ulang' />
+  <p>{{user.katasandi ==katasandi_ulang? "katasandi sama":"kata sandi tidak sesuai"}} </p>
+  <button (click)='tambah(user)'>Daftar</button>
+  <p></p>
+</div>

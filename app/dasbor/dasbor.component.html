@@ -1,0 +1,9 @@
+<div *ngIf='valid'>
+  <ul class='wadah_nav_dasbor'>
+    <li class='nav nav_dsbr' [routerLink]="['absen']"><img width="30px" src='{{url_gambar}}list.png' />{{user.admin==1?"List":"Absensi"}} Kegiatan</li>
+    <li class='nav nav_dsbr' [routerLink]="['timeline']"><img width="30px" src='{{url_gambar}}calendar.png' />Timeline</li>
+  </ul>
+  <div class='menudasbor'>
+    <router-outlet></router-outlet>
+  </div>
+</div>

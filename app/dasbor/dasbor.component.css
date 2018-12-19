@@ -1,0 +1,37 @@
+.menudasbor{
+    width:90%;
+    margin:auto;
+}
+
+.wadah_nav_dasbor{
+    margin:20px;
+    /* background-color:darkgrey; */
+    width: 80%;
+    text-align: right;
+}
+
+.nav_dsbr{
+    background-color: brown;
+    margin: 10px;
+    border: solid 1px brown;
+    border-radius: 10px;
+}
+
+
+.judul-divisi{
+    color:white;
+    background-color: tomato;
+    font-size: 0.6em;
+    padding:7px;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+.realisasi-ok{
+    color:lime;
+    font-size: 2em;
+}
+
+.realisasi-not{
+    font-size: 2em;
+}

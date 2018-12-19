@@ -1,0 +1,32 @@
+.pop-up{
+    position: fixed;
+    right: 30%;
+}
+
+.show-filter{
+    position: fixed;
+    right: 0px;
+    background-color: blue;
+    font-size: 2em;
+    color:white;
+    border: none;
+    transition-duration: 0.5s;
+    transform: rotate(90deg);
+}
+
+.show-filter:hover{
+    cursor: pointer;
+    background-color: cornflowerblue;
+}
+
+.filterbox{
+    width: 40%;
+    margin: 10px;
+    padding: 15px;
+    font-size: 1.5em;
+    background-color: darkgrey;
+}
+
+.filterbox select{
+    width: 60%
+}

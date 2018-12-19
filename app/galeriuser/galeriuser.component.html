@@ -1,0 +1,28 @@
+<h2>
+  Galeri Kegiatan Divisi Syiar MPI ..
+  {{indexgambar}}
+</h2>
+<div class='galeri' *ngIf='tampilgambar'>
+  <img class='tampilgambar' style='max-height:400px; max-width: 500px;' [@masuklist] src='{{url_image}}{{gambartampil.nama}}' />
+  <div class='rincian'>
+    <h2 class='judul-program'>{{kegiatan.nama}}</h2>
+    <p></p>
+    <span class='judul-program'><img width="20px" src="/assets/images/user.png" />{{bpd}}</span>
+    <p><u>Keterangan</u></p>
+    <p>{{kegiatan.lokasi}}/{{kegiatan.tanggal}}</p>
+    <p>{{kegiatan.peserta}} peserta</p>
+    <p>{{kegiatan.keterangan}}</p>
+    <a style='color:dimgrey' class='nav' id='prev' (click)="navimage('prev')">&#10096;</a>
+    <a style='color:dimgrey' class='nav' id='next' (click)="navimage('next')">&#10097;</a>
+    <a style='color:dimgrey' class='nav' id='close' (click)="tutup()">Tutup</a>
+  </div>
+</div>
+<div class='galeri'>
+  <div class='listgaleri'>
+    <div class='itemphoto' [@masuklist] *ngFor='let img of listgaleri; index as i' [ngClass]='{selected:img.id==gambartampil.id}'
+      (click)='tampil(img, i)'>
+      <img height='80px' src='{{url_image}}{{img.nama}}' />
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+</div>

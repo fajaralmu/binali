@@ -1,0 +1,66 @@
+<div class='container'>
+    <div [@masuklist] *ngIf='tampildetailharian' class='wrap-detail-harian'>
+        <button style='float:right' (click)='tutupdetailharian()'>tutup</button>
+        <h3>Kegiatan tanggal: {{date.hari}}-{{date.bulan+1}}-{{date.thn}}</h3>
+        <app-listentitas [comp]='comp' [listentitas]='listKegiatanHarian' [listkegiatan_tampil]='1'></app-listentitas>
+    </div>
+    <div>
+        bulan<input type='number' #src_bulan id='src_bulan' value='tanggal.getMonth()+1' min=1 max=12 />
+        tahun<input type='number' #src_tahun id='src_tahun' value='tanggal.getFullYear()' />
+        <button id='prev' (click)='menuju()'>Go</button>
+    </div>
+    <app-filter [user]='user' [comp]='comp' [listbpd]='listbpd' [listprogram]='listprogram' [listdivisi]='listdivisi'></app-filter>
+    <div id='kalender' [@masuklist]>
+        <p></p>
+        <div class='nav-tanggal'>
+            <table class='tabel-navigasi'>
+                <tr>
+                    <td>
+                        <a class='btn' id='prev' (click)='prevmonth()'>&#10096;</a>
+                    </td>
+                    <td>
+                        <span>{{bulan[index_bulan_skrg].nama}}, {{tahun_skrg}}</span>
+                    </td>
+                    <td>
+                        <a class='btn' id='next' (click)='nextmonth()'>&#10097;</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table class='kalender' #tgl id='tgl'>
+            <tr>
+                <th>
+                    Senin
+                </th>
+                <th>
+                    Selasa
+                </th>
+                <th>
+                    Rabu
+                </th>
+                <th>
+                    Kamis
+                </th>
+                <th>
+                    Jumat
+                </th>
+                <th>
+                    Sabtu
+                </th>
+                <th>
+                    Ahad
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div id='wadah-proker' [@masuklist]>
+        <p class='judul-info-proker'>
+            Proker bulan {{bulan[index_bulan_skrg].nama}} {{tahun_skrg}}
+        </p>
+        <div id='info-proker'>
+            <span *ngIf='!listKegiatanBulanan.length'><i>Belum ada</i></span>
+            <br />
+            <app-listentitas [comp]='comp' [listentitas]='listKegiatanBulanan' [listkegiatan_tampil]='1'></app-listentitas>
+        </div>
+    </div>
+</div>

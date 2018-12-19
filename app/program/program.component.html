@@ -1,0 +1,33 @@
+<div class='container' *ngIf='valid' style='width:80%;margin: auto'>
+  <h2>
+    Master Data Program Kerja
+  </h2>
+  <div class='form form-proker' [@masuklist]>
+    <button *ngIf='admin' (click)='switchtambah()'>progam baru</button>
+    <p></p>
+    <p>Nama Program</p>
+    <input type='text' [(ngModel)]='program.namaprogram' />
+    <p>Deskripsi</p>
+    <textarea [(ngModel)]='program.deskripsi'></textarea>
+    <p>Untuk Divisi</p>
+    <select [(ngModel)]='program.iddivisi'>
+      <option *ngFor='let div of listdivisi' value='{{div.id}}'>
+        {{div.namadivisi}}
+      </option>
+    </select>
+    <p></p>
+    <button *ngIf='baru && admin' (click)='tambah()'>tambah</button>
+    <button *ngIf='!baru && admin' (click)='edit()'>simpan</button>
+    <p></p>
+
+  </div>
+  <div style='min-height: 500px;'>
+    <div style="width:40%">
+      <app-listentitas
+      [comp]='comp'
+      [listentitas]='listprogram'
+      [listprogram_tampil]='1'
+      ></app-listentitas>
+    </div>
+  </div>
+</div>
